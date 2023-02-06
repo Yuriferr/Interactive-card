@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/icon-complete.svg">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Interactive-card</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="container--card">
+        <div class="container--cardfront">
+          <div class="balls">
+            <div class="ball--white"></div>
+            <div class="ball--transparent"></div>
+          </div>
+
+          <label class="card--number" id="card-number"
+            >0000 0000 0000 0000</label
+          >
+
+          <div class="card--nameDATE">
+            <label id="card-name" class="card--name">Name</label>
+            <label card--date><span id="card-mm">00</span>/<span id="card-yy">00</span></label>
+          </div>
+        </div>
+
+        <div class="container--cardback">
+          <label id="card-cvc" class="card--cvc">000</label>
+        </div>
+      </section>
+
+      <section class="container--infoarea">
+        <div class="container--info">
+          <div class="infos">
+            <label>CARDHOLDER NAME</label>
+            <input
+              id="input-cardName"
+              type="text"
+              placeholder="e.g.Yuri Fernnades"
+              onchange="gettingValue()"
+            />
+          </div>
+
+          <div class="infos">
+            <label>CARD NUMBER</label>
+            <input
+              id="input-cardNumber"
+              type="text"
+              placeholder="e.g. 1234 5678 9123 0000"
+              onchange="gettingValue()"
+            />
+          </div>
+
+          <div class="container--mmyy_cvc">
+            <div class="infos">
+              <label>EXP.DATE (MM/YY)</label>
+              <div class="inputs--mmyy">
+                <input
+                  id="input-mm"
+                  placeholder="MM"
+                  onchange="gettingValue()"
+                />
+                <input
+                  id="input-yy"
+                  placeholder="YY"
+                  onchange="gettingValue()"
+                />
+              </div>
+            </div>
+            <div class="container--cvc infos">
+              <label>CVC</label>
+              <input
+                id="input-cvc"
+                placeholder="e.g. 123"
+                onchange="gettingValue()"
+              />
+            </div>
+          </div>
+          <button onclick="click()">Confirm</button>
+        </div>
+      </section>
+    </div>
+    <script src="./script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+
+    <script>
+      var cleave = new Cleave("#input-cardNumber", {
+        delimiter: " ",
+        blocks: [4, 4, 4, 4],
+        uppercase: true,
+      });
+
+      var cleave = new Cleave("#input-mm", {
+        blocks: [2],
+        uppercase: true,
+      });
+
+      var cleave = new Cleave("#input-yy", {
+        blocks: [2],
+        uppercase: true,
+      });
+
+      var cleave = new Cleave("#input-cvc", {
+        blocks: [3],
+        uppercase: true,
+      });
+    </script>
+  </body>
+</html>

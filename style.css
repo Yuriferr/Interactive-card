@@ -1,0 +1,247 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.container--card{
+    background-image: url("./assets/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* card front */
+
+.container--cardfront{
+    width: 300px;
+    height: 150px;
+    background-image: url("./assets/bg-card-front.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    padding: 20px;
+    position: absolute;
+    margin-top: -220px;
+    margin-left: 20%;
+}
+
+.balls{
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.ball--white{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.ball--transparent{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+
+.card--number{
+    font-size: 20px;
+    color: white;
+}
+
+.card--nameDATE{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card--nameDATE label{
+    color: white;
+    font-size: 12px;
+}
+
+/* card back */
+
+.container--cardback{
+    width: 300px;
+    height: 150px;
+    background-image: url("./assets/bg-card-back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    padding: 20px;
+    position: absolute;
+    margin-top: 230px;
+    margin-left: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card--cvc{
+    color: white;
+    margin-right: -75%;
+}
+
+/* info */
+
+.container--infoarea{
+    width: 70%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container--info{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label{
+    text-align: left;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+input{
+    border-radius: 5px;
+    width: 400px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #dfdfdf;
+}
+
+.container--mmyy_cvc{
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputs--mmyy{
+    display: flex;
+    width: 10%;
+    gap: 20px;
+}
+
+.inputs--mmyy input{
+    width: 50px;
+}   
+
+.container--cvc{
+    display: flex;
+    flex-direction: column;
+}
+
+.container--cvc input{
+    width: 150px;
+}
+
+button{
+    background-image: url("./assets/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+    font-size: 17px;
+    opacity: 1;
+    transition: all ease 0.2s;
+}
+
+button:hover{
+    opacity: 0.9;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 1100px){
+        .container{
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .container--card{
+            background-image: url("./assets/bg-main-mobile.png");
+            width: 100%;
+            height: 60%;
+        }
+
+        .container--cardfront{
+            width: 50%;
+            margin: 0;
+            z-index: 10;
+            margin-top: 200px;
+            margin-right: 20%;
+        }
+
+        .container--cardback{
+            width: 50%;
+            margin: 0;
+            margin-bottom: 50px;
+            margin-left: 20%;
+        }
+
+        .container--infoarea{
+            width: 100%;
+        }
+
+        .container--info{
+            margin: 0;
+            margin-top: 50px;
+        }
+}
+
+@media only screen and (max-width: 500px){
+    .container{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container--card{
+        background-image: url("./assets/bg-main-mobile.png");
+        width: 100%;
+        height: 50%;
+    }
+
+    input{
+        width: 250px;
+    }
+
+    .inputs--mmyy input{
+        width: 25px;
+    }   
+
+    .container--cvc input{
+        width: 100px;
+    }
+}
